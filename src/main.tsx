@@ -1,9 +1,10 @@
-import { createElement, StrictMode } from "react";
+import { StrictMode } from "react";
 import { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import LazyLoadingSpin from "./components/ui/LazyLoadingSpin.tsx";
 
 const AuthLayout = lazy(
   () => import("./components/features/auth/AuthLayout.tsx")
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<div>Loading the Page...</div>}>
+          <Suspense fallback={<LazyLoadingSpin/>}>
             <App />
           </Suspense>
         ),
