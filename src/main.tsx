@@ -1,19 +1,27 @@
-import { StrictMode } from "react";
+import { createElement, StrictMode } from "react";
+import { Suspense, lazy } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import AuthLayout from "./components/features/auth/AuthLayout.tsx";
-import Login from "./components/features/auth/Login.tsx";
-import Register from "./components/features/auth/Register.tsx";
-import Layout from "./components/layout/Layout.tsx";
-import PrivateRoute from "./routes/PrivateRoute.tsx";
-import UserLayout from "./components/features/profile/UserLayout.tsx";
-import UserProfile from "./components/features/profile/UserProfile.tsx";
-import RoleBasedRoute from "./pages/admin/RoleBasedRoute.tsx";
-import AdminDashboard from "./pages/admin/AdminDashboard.tsx";
-import AdminLayout from "./pages/admin/AdminLayout.tsx";
-import NotFound from "./components/layout/NotFound.tsx";
+
+const AuthLayout = lazy(
+  () => import("./components/features/auth/AuthLayout.tsx")
+);
+const Login = lazy(() => import("./components/features/auth/Login.tsx"));
+const Register = lazy(() => import("./components/features/auth/Register.tsx"));
+const Layout = lazy(() => import("./components/layout/Layout.tsx"));
+const PrivateRoute = lazy(() => import("./routes/PrivateRoute.tsx"));
+const UserLayout = lazy(
+  () => import("./components/features/profile/UserLayout.tsx")
+);
+const UserProfile = lazy(
+  () => import("./components/features/profile/UserProfile.tsx")
+);
+const RoleBasedRoute = lazy(() => import("./pages/admin/RoleBasedRoute.tsx"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard.tsx"));
+const AdminLayout = lazy(() => import("./pages/admin/AdminLayout.tsx"));
+const NotFound = lazy(() => import("./components/layout/NotFound.tsx"));
 
 const router = createBrowserRouter([
   {
@@ -36,7 +44,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <App />,
+        element: (
+          <Suspense fallback={<div>Loading the Page...</div>}>
+            <App />
+          </Suspense>
+        ),
       },
       {
         element: <PrivateRoute />,
