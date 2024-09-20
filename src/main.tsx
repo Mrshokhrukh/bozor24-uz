@@ -6,19 +6,13 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LazyLoadingSpin from "./components/ui/LazyLoadingSpin.tsx";
 
-const AuthLayout = lazy(
-  () => import("./components/features/auth/AuthLayout.tsx")
-);
+const AuthLayout = lazy(() => import("./components/features/auth/AuthLayout.tsx"));
 const Login = lazy(() => import("./components/features/auth/Login.tsx"));
 const Register = lazy(() => import("./components/features/auth/Register.tsx"));
 const Layout = lazy(() => import("./components/layout/Layout.tsx"));
 const PrivateRoute = lazy(() => import("./routes/PrivateRoute.tsx"));
-const UserLayout = lazy(
-  () => import("./components/features/profile/UserLayout.tsx")
-);
-const UserProfile = lazy(
-  () => import("./components/features/profile/UserProfile.tsx")
-);
+const UserLayout = lazy(() => import("./components/features/profile/UserLayout.tsx"));
+const UserProfile = lazy(() => import("./components/features/profile/UserProfile.tsx"));
 const RoleBasedRoute = lazy(() => import("./pages/admin/RoleBasedRoute.tsx"));
 const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard.tsx"));
 const AdminLayout = lazy(() => import("./pages/admin/AdminLayout.tsx"));
@@ -46,7 +40,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<LazyLoadingSpin/>}>
+          <Suspense fallback={<LazyLoadingSpin />}>
             <App />
           </Suspense>
         ),
@@ -70,9 +64,11 @@ const router = createBrowserRouter([
           {
             path: "admin-dashboard",
             element: (
-              <AdminLayout>
-                <AdminDashboard />
-              </AdminLayout>
+              <Suspense fallback={<LazyLoadingSpin />}>
+                <AdminLayout>
+                  <AdminDashboard />
+                </AdminLayout>
+              </Suspense>
             ),
           },
         ],
