@@ -11,6 +11,7 @@ const Layout = ({}: Props) => {
 
   const handleSize = () => {
     setIsMobile(window.innerWidth);
+    
   };
   useEffect(() => {
     window.addEventListener("resize", handleSize);
@@ -20,7 +21,7 @@ const Layout = ({}: Props) => {
   }, [window.innerWidth]);
 
   return (
-    <div className="transition-all ease-linear duration-200">
+    <div className="transition-all ease-linear duration-200 pb-16">
       {isMobile < 768 ? <MobileMenu /> : <Header />}
       <Outlet />
       <Footer />

@@ -18,14 +18,12 @@ const RecomendationCategory: React.FC<RecomendationCategoryProps> = () => {
       </div>
       <div className="flex gap-3 mt-4">
         <div
-          className="bg-gradient-to-r from-[#B537F0] to-[#F24A4A] h-[100px] flex-1 rounded-2xl
-        font-bold text-white text-2xl text-center flex items-center cursor-pointer"
+          className="advertisement"
         >
           Special products for you
         </div>
         <div
-          className="bg-gradient-to-r from-[#B537F0] to-[#F24A4A] h-[100px] flex-1 rounded-2xl
-        font-bold text-white text-2xl text-center flex items-center cursor-pointer"
+          className="advertisement"
         >
           12:28:05 Flash discounts
         </div>

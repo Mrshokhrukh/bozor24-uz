@@ -9,7 +9,7 @@ const SpecialProducts: React.FC<SpecialProductsProps> = () => {
     <div className="w-[100%]">
       <div className="flex justify-between mt-5">
         <p className="font-semibold">Special Products For You</p>
-        <Link to="" className="text-blue-500 font-semibold">
+        <Link to="" className="hover:underline text-blue-500 font-semibold">
           See all
         </Link>
       </div>
