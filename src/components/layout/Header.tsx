@@ -1,8 +1,7 @@
-import React from 'react'
 
 type Props = {}
 
-const Header = (props: Props) => {
+const Header = ({}: Props) => {
   return (
     <div>Header</div>
   )
