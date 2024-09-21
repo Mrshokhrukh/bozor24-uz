@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       screens: {
-        mx: "1290px",
+        wmx: "1290px",
+      },
+      boxShadow: {
+        shx1: "rgba(0, 0, 0, 0.15) 0px 2px 8px;",
       },
     },
   },

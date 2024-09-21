@@ -1,10 +1,17 @@
+import SearchForm from "./components/features/form/SearchForm";
+import BrandsSection from "./components/ui/BrandsSection";
+import HomePage from "./pages/clientPage/HomePage";
 
-type Props = {}
+type Props = {};
 
 function App({}: Props) {
   return (
-    <div className="">App</div>
-  )
+    <div className="">
+      <SearchForm />
+      <BrandsSection />
+      <HomePage />
+    </div>
+  );
 }
 
-export default App
+export default App;

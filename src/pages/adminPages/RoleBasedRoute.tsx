@@ -4,10 +4,10 @@ type Props = {
   allowedRoles: string[];
 };
 
-const RoleBasedRoute = ({}: Props) => {
+const RoleBasedRoute = ({ allowedRoles }: Props) => {
   return (
     <div>
-      {/* <Outlet /> */}
+      <Outlet />
     </div>
   );
 };

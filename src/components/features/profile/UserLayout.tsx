@@ -3,7 +3,7 @@ type Props = {
 };
 
 const UserLayout = ({ children }: Props) => {
-  return <div>{children}</div>;
+  return <div>user layout: {children}</div>;
 };
 
 export default UserLayout;
