@@ -11,7 +11,6 @@ const Layout = ({}: Props) => {
 
   const handleSize = () => {
     setIsMobile(window.innerWidth);
-    
   };
   useEffect(() => {
     window.addEventListener("resize", handleSize);

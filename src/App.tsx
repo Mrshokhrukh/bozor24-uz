@@ -8,8 +8,10 @@ function App({}: Props) {
   return (
     <div className="">
       <SearchForm />
-      <BrandsSection />
-      <HomePage />
+      <div className="mt-[73px]">
+        <BrandsSection />
+        <HomePage />
+      </div>
     </div>
   );
 }
