@@ -5,6 +5,8 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LazyLoadingSpin from "./components/ui/LazyLoadingSpin.tsx";
+import { Provider } from "react-redux";
+import { store } from "./store/store.ts";
 
 const AuthLayout = lazy(() => import("./components/features/auth/AuthLayout.tsx"));
 const Login = lazy(() => import("./components/features/auth/Login.tsx"));
@@ -83,6 +85,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>
 );
