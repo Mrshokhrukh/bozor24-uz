@@ -1,10 +1,17 @@
+import HeadBottomCategories from "../ui/HeadBottomCategories";
+import HeaderMain from "../ui/HeaderMain";
+import HeaderTop from "../ui/HeaderTop";
 
-type Props = {}
+type Props = {};
 
 const Header = ({}: Props) => {
   return (
-    <div>Header</div>
-  )
-}
+    <div>
+      <HeaderTop />
+      <HeaderMain />
+      <HeadBottomCategories />
+    </div>
+  );
+};
 
-export default Header
+export default Header;

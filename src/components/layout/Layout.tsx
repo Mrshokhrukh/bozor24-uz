@@ -18,7 +18,7 @@ const Layout = ({}: Props) => {
   // }, [window.innerWidth]);
 
   return (
-    <div className="transition-all ease-linear duration-200">
+    <div className="bg-slate-100 p-2 transition-all ease-linear duration-200">
       <Header />
       <Outlet />
       <Footer />
